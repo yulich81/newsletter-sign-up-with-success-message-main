@@ -1,0 +1,416 @@
+/*======= General settings =======*/
+
+/* Colors */
+
+:root {
+  --primary: hsl(4, 100%, 67%);
+  --dark: hsl(234, 29%, 20%);
+  --charcoal: hsl(235, 18%, 26%);
+  --gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Document */
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+main {
+  display: block;
+}
+
+a {
+  background-color: transparent;
+}
+
+img {
+  border-style: none;
+  width: 100%;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Body */
+
+body {
+  position: relative;
+
+  background: var(--charcoal);
+  height: 100vh;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*======= Main CSS =======*/
+
+main {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+/* Card */
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  max-width: 920px;
+
+  color: var(--dark);
+}
+
+.card-inner {
+  display: flex;
+  -webkit-display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  gap: 3rem;
+
+  padding: 1.5em;
+}
+
+.card-text {
+  padding-left: 3em;
+  width: 50%;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5em;
+  line-height: 1.2;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  padding-left: 2rem;
+}
+
+ul li::before {
+  content: url(https://api.iconify.design/material-symbols/check.svg?color=white);
+  position: absolute;
+  left: 0;
+  display: flex;
+  -webkit-display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  background: var(--primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 18px;
+  padding-top: 3px;
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.card-image {
+  width: 50%;
+}
+
+.card-image-mobile {
+  display: none;
+}
+
+/* Form */
+
+.form-label-group {
+  display: flex;
+  -webkit-display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+
+  margin-top: 2rem;
+}
+
+.form-label-group {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.error-message {
+  color: var(--primary);
+}
+
+.subscribe-form {
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+
+  margin-bottom: 1.5rem;
+}
+
+input:invalid,
+input:-moz-ui-invalid {
+  border: 1px solid var(--primary);
+  background: hsla(4, 100%, 67%, 0.2);
+
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-input,
+.form-input:placeholder-shown {
+  padding: 1.35em 1.2em;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  background: var(--white);
+}
+
+.form-input:focus {
+  border: 1px solid var(--dark);
+  background: var(--white);
+
+  color: var(--dark);
+}
+
+.form-button {
+  display: inline-flex;
+  -webkit-display: inline-flex;
+  /* Safari */
+  align-items: center;
+  -webkit-align-items: center;
+  /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  /* Safari */
+
+  border: 1px solid var(--charcoal);
+  background: var(--charcoal);
+  width: 100%;
+  padding: 1em 0;
+  border-radius: 8px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--white);
+  letter-spacing: 1.05px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+  transition-property: background;
+}
+
+.form-button:hover {
+  background: rgb(195, 59, 101);
+  background: linear-gradient(90deg, rgba(195, 59, 101, 0.8435749299719888) 0%, rgba(255, 116, 106, 1) 100%);
+  border-color: var(--primary);
+}
+
+.body__position {
+  position: fixed;
+}
+
+/* Success modal */
+
+
+dialog::backdrop {
+  background-color: hsl(234, 29%, 20%);
+}
+
+.success-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: var(--white);
+  padding: 4rem;
+  max-width: 320px;
+  border: none;
+  border-radius: 20px;
+
+  color: var(--dark);
+}
+
+.success-modal iconify-icon {
+  display: flex;
+  -webkit-display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+
+  background: var(--primary);
+  border-radius: 50%;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+
+  color: var(--white);
+  font-size: 36px;
+}
+
+.success-modal p {
+  font-size: 14px;
+  margin-bottom: 3rem;
+}
+
+.success-modal a {
+  color: var(--dark);
+  font-weight: 700;
+
+  transition: color 0.3s ease;
+}
+
+.success-modal a:hover {
+  color: var(--primary);
+}
+
+/* Attribution */
+
+.attribution {
+  margin-top: 2rem;
+
+  color: var(--white);
+  font-size: 14px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--white);
+
+  transition: color 0.3s ease;
+}
+
+.attribution a:hover {
+  color: var(--primary);
+}
+
+/*======= Media Queries =======*/
+
+/* 375px */
+
+@media screen and (max-width: 375px) {
+
+  body {
+    background: var(--white);
+    margin: 0;
+  }
+
+  main {
+    height: auto;
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .card-wrap {
+    z-index: 1;
+  }
+
+  .card {
+    border-radius: 0;
+  }
+
+  .card-inner {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+
+    padding: 0;
+    gap: 1.5em;
+  }
+
+  .card-image-mobile {
+    display: block;
+  }
+
+  .card-image-desktop {
+    display: none;
+  }
+
+  .card-image {
+    order: 1;
+
+    width: 100%;
+  }
+
+  .card-text {
+    order: 2;
+
+    width: fit-content;
+    padding: 0 1.5em;
+  }
+
+  /* Success modal */
+
+  dialog::backdrop {
+    background-color: var(--white);
+  }
+
+  .success-modal {
+    padding: 2rem;
+    height: 100%;
+    top: 0;
+    transform: translateY(0);
+
+    height: 100vh;
+    margin-top: 50%;
+  }
+
+  .success-modal p {
+    margin-bottom: 12rem;
+  }
+
+  .success-modal .dismiss-button {
+    margin-top: 10%;
+    margin-bottom: 1rem;
+  }
+
+  .attribution {
+    display: none;
+  }
+}

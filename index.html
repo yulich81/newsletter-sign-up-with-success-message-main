@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/jpmain.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="card-wrap">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-text">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
+
+            <div class="form-label-group">
+              <label for="email">Email address</label>
+              <div class="error-message"></div>
+            </div>
+            <form method="dialog" class="subscribe-form" id="subscribe-form">
+              <div class="form-group">
+                <input type="email" class="form-input" required id="email" placeholder="email@company.com">
+                <div class="error"></div>
+              </div>
+              <button class="form-button subscribe-button" type="submit">Subscribe to monthly newsletter</button>
+            </form>
+            <!-- .subscribe-form -->
+            <dialog class="success-modal">
+              <div class="success-modal-text"><iconify-icon icon="material-symbols:check"></iconify-icon>
+                <h2>Thanks for subscribing!</h2>
+                <p>A confirmation email has been sent to <a href="mailto:ash@loremcompany.com">ash@loremcompany.com</a>.
+                  Please open it and click the button inside to confirm your subscription.</p>
+              </div>
+              <button class="form-button dismiss-button" type="submit">Dismiss message</button>
+            </dialog>
+          </div>
+          <!-- .card-text -->
+          <div class="card-image card-image-desktop"><img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+          </div>
+          <div class="card-image card-image-mobile"><img src="./assets/images/illustration-sign-up-mobile.svg" alt="">
+          </div>
+          <!-- .card-image -->
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/yulich81">Julia</a>.
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  <script src="./assets/js/jpmain.js"></script>
+</body>
+
+</html>
