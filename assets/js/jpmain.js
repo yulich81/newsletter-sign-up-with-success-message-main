@@ -6,7 +6,7 @@ const closeButton = document.querySelector(".dismiss-button");
 const emptyField = "Valid email required";
 const validField = "";
 var validRegex =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 showButton.addEventListener("click", function () {
   if (email.value.match(validRegex)) {
